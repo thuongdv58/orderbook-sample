@@ -92,7 +92,7 @@ export class OrderBookSimulator {
             }
             bids.push([price, size]);
         }
-        bids.sort((a , b) => b - a);
+        bids.sort((a , b) => b[0] - a[0]);
 
         var asks = []
         var totalAskingSize = 0;
@@ -111,7 +111,7 @@ export class OrderBookSimulator {
             }
             asks.push([price, size])
         }
-        asks.sort((a, b) => a - b);
+        asks.sort((a, b) => a[0] - b[0]);
         return { bids, asks }
     }
 
