@@ -12,6 +12,6 @@ async function bootstrap() {
   //binanceClient.setHandler("depthUpdate", (message) => console.log(message));
   const orderBook = await app.get(OrderBookSimulator);
   //orderBook.bestPrice()
-  await app.listen(3000);
+  await app.listen(443);
 }
 bootstrap();
