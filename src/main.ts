@@ -2,6 +2,7 @@ import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
 import { BinanceClient } from './binance_client';
 import { BittrexClient } from './bittrex_client';
+import { ConfigService } from './config.service';
 import { OrderBookSimulator } from './orderbook.silulator';
 
 async function bootstrap() {
@@ -12,6 +13,8 @@ async function bootstrap() {
   //binanceClient.setHandler("depthUpdate", (message) => console.log(message));
   const orderBook = await app.get(OrderBookSimulator);
   //orderBook.bestPrice()
-  await app.listen(443);
+  const port = app.get(ConfigService).env.PORT || 3000
+
+  await app.listen(port);
 }
 bootstrap();
