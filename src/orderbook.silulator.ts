@@ -59,8 +59,8 @@ export class OrderBookSimulator {
 
     updateOrderBook(bid, ask) {
         if(this.reverseOrderBook) {
-            this.highestBuy = 1 / bid[0][0];
-            this.lowestSell = 1 / ask[0][0];
+            this.lowestSell = 1 / bid[0][0];
+            this.highestBuy = 1 / ask[0][0];
         } else {
             this.highestBuy = bid[0][0];
             this.lowestSell = ask[0][0];
